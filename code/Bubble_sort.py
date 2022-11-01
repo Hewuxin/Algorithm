@@ -66,11 +66,39 @@ def cock_tail_sort(array: []):
             break
 
 
+def bubble_sort_review(array: []):
+    for i in range(len(array) - 1):
+        for j in range(len(array) - i - 1):
+            if array[j] > array[j + 1]:
+                array[j], array[j + 1] = array[j + 1], array[j]
+
+
+def bubble_sort_review01(array: []):
+    """
+    改进版 冒泡排序
+    :param array:
+    :return:
+    """
+    for i in range(len(array) - 1):
+        exchange = False
+        for j in range(len(array) - i - 1):
+            if array[j] > array[j + 1]:
+                array[j], array[j + 1] = array[j + 1], array[j]
+                exchange = True
+        if not exchange:
+            return
+
+
 if __name__ == '__main__':
-    # data_list = [3, 4, 2, 1, 5, 6, 7, 8]
+    data_list = [3, 4, 2, 1, 5, 6, 7, 8]
     # data_list = [2, 3, 4, 5, 6, 7, 8, 1]
-    data_array = [3, 4, 14, 1, 5, 6, 7, 8, 1, -1, 0, 9, 11]
-    cock_tail_sort(data_array)
-    print(data_array)
-    random_array = [random.randint(1, 100) for _ in range(10)]
-    print(random_array)
+    # data_array = [3, 4, 14, 1, 5, 6, 7, 8, 1, -1, 0, 9, 11]
+    # cock_tail_sort(data_array)
+    # print(data_array)
+    # random_array = [random.randint(1, 100) for _ in range(10)]
+    # print(random_array)
+    print(data_list)
+    bubble_sort_review01(data_list)
+    print(data_list)
+    #
+    # bubble_sort_review01(data_list)
